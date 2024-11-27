@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+
+#wrap{
+	width: 971px;
+	margin: 0 auto;	
+}
+
+#h1{
+	color:green;
+}
+
+table{
+	width:100%
+	border-collapse: collapse;
+	font-size:12px;
+	line-height:24px;
+}
+
+

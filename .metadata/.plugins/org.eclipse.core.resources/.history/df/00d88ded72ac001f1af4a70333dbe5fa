@@ -1,0 +1,80 @@
+package com.guri.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.guri.dto.ProductVO;
+
+import util.DBManager;
+
+public class ProductDAO {
+
+	private ProductDAO() {
+		
+	}
+	
+	private static ProductDAO instance = new ProductDAO();
+	
+	public static ProductDAO getinstance() {
+		return instance;
+	}
+	
+	// 최근 상품 출력하는 메서드
+	
+	public List<ProductVO> selectAllProducts(){
+		String sql = "select * from product order by code desc";
+		List<ProductVO> list= new ArrayList<ProductVO>();
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				ProductVO pvo = new ProductVO();
+				pvo.setCode(rs.getInt("code"));
+				pvo.setName(rs.getString("name"));
+				pvo.setPrice(rs.getInt("price"));
+				pvo.setPictureUrl(rs.getString("pictureUrl"));
+				pvo.setDescription(rs.getString("description"));
+				
+				list.add(pvo);
+				
+			}
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, pstmt, rs);
+		}
+		
+		return list;
+		
+	}
+	
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

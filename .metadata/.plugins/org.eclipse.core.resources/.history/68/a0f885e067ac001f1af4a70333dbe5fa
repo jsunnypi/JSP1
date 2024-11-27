@@ -1,0 +1,5 @@
+package com.guri.dto;
+
+public class ProductVO {
+
+}

@@ -1,0 +1,7 @@
+INDEX VERSION 1.134
+C:\ljs\jsp1\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\995050652.index
+\shopping\src\main\java
+C:\ljs\jsp1\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\703008157.index
+\shopping\src\main\java
+C:\ljs\jsp1\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\267588680.index
+\FileEx\src\main\java
